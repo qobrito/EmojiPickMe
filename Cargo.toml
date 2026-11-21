@@ -1,0 +1,13 @@
+[package]
+name = "emoji-picker"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+gtk4 = "0.9"
+emojis = "0.6"
+gtk4-layer-shell = "0.4"
+
+[profile.release]
+lto = true
+strip = true
