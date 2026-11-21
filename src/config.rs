@@ -24,11 +24,11 @@ impl Default for Config {
 }
 
 pub fn config_file() -> PathBuf {
-    glib::user_config_dir().join("emoji-picker").join("config")
+    glib::user_config_dir().join("emoji-pick-me").join("config")
 }
 
 pub fn recent_file() -> PathBuf {
-    glib::user_data_dir().join("emoji-picker").join("recent")
+    glib::user_data_dir().join("emoji-pick-me").join("recent")
 }
 
 pub fn write_file(path: PathBuf, content: String) -> std::io::Result<()> {

@@ -1,4 +1,4 @@
-# emoji-picker
+# emoji-pick-me
 
 Небольшой нативный выбиральщик emoji в стиле dmenu для Wayland (проверялся в расчёте на niri).
 Запускаешь, печатаешь запрос, выбираешь emoji стрелками или мышью, жмёшь Enter — emoji скопирован в буфер обмена.
@@ -38,9 +38,9 @@
 
 Файлы:
 
-- `~/.config/emoji-picker/config` — настройки (`recent_enabled`, `recent_max`, `locale`, `dark`)
-- `~/.local/share/emoji-picker/recent` — список недавних, по одному emoji в строке
-- `~/.local/share/emoji-picker/locales/<код>.tsv` — скачанные локализации: emoji, название, ключевые слова через `|`
+- `~/.config/emoji-pick-me/config` — настройки (`recent_enabled`, `recent_max`, `locale`, `dark`)
+- `~/.local/share/emoji-pick-me/recent` — список недавних, по одному emoji в строке
+- `~/.local/share/emoji-pick-me/locales/<код>.tsv` — скачанные локализации: emoji, название, ключевые слова через `|`
 
 ## Структура
 
@@ -71,17 +71,17 @@ sudo pacman -S --needed rust gtk4 gtk4-layer-shell wl-clipboard noto-fonts-emoji
 ## Сборка
 
 ```sh
-git clone <repo-url> emoji-picker   # или просто перейди в папку проекта
-cd emoji-picker
+git clone https://github.com/qobrito/EmojiPickMe.git
+cd EmojiPickMe
 cargo build --release
 ```
 
-Готовый бинарник окажется в `target/release/emoji-picker`.
+Готовый бинарник окажется в `target/release/emoji-pick-me`.
 
 ## Установка
 
 ```sh
-install -Dm755 target/release/emoji-picker ~/.local/bin/emoji-picker
+install -Dm755 target/release/emoji-pick-me ~/.local/bin/emoji-pick-me
 ```
 
 Убедись, что `~/.local/bin` есть в `$PATH`. Либо запусти без установки: `cargo run --release`.
@@ -92,11 +92,11 @@ install -Dm755 target/release/emoji-picker ~/.local/bin/emoji-picker
 
 ```kdl
 binds {
-    Mod+Period { spawn "emoji-picker"; }
+    Mod+Period { spawn "emoji-pick-me"; }
 }
 ```
 
-`window-rule` не нужен: приложение — не обычное окно, а layer-shell поверхность (namespace `emoji-picker`), её niri не кладёт в колонки. При желании её можно стилизовать через `layer-rule { match namespace="emoji-picker" ... }`.
+`window-rule` не нужен: приложение — не обычное окно, а layer-shell поверхность (namespace `emoji-pick-me`), её niri не кладёт в колонки. При желании её можно стилизовать через `layer-rule { match namespace="emoji-pick-me" ... }`.
 
 ## Возможные проблемы
 

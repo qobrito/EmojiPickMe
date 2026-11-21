@@ -181,7 +181,7 @@ pub fn build_ui(app: &gtk::Application) {
     // оверлей поверх всех окон, как dmenu/fuzzel: без якорей — по центру экрана
     if gtk4_layer_shell::is_supported() {
         window.init_layer_shell();
-        window.set_namespace("emoji-picker");
+        window.set_namespace("emoji-pick-me");
         window.set_layer(Layer::Overlay);
         window.set_keyboard_mode(KeyboardMode::Exclusive);
     }

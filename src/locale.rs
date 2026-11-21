@@ -40,7 +40,7 @@ pub struct Loc {
 pub type Locale = HashMap<String, Loc>;
 
 pub fn locales_dir() -> PathBuf {
-    glib::user_data_dir().join("emoji-picker").join("locales")
+    glib::user_data_dir().join("emoji-pick-me").join("locales")
 }
 
 pub fn locale_file(code: &str) -> PathBuf {
